@@ -1,5 +1,6 @@
 import asyncio
 import aiohttp
+from env import WEATHER2, WEATHER3
 
 
 async def weather1(session):
@@ -12,14 +13,14 @@ async def weather1(session):
 
 
 async def weather2(session):
-    r = await session.get('https://api.weatherbit.io/v2.0/current?lat=40.6971494&lon=-74.2598655&key=f8a1e5d2ca1944eca7e07b1d2713ce87&')
+    r = await session.get('https://api.weatherbit.io/v2.0/current?lat=40.6971494&lon=-74.2598655&key='+WEATHER2)
     res = await r.json()
     res = res['data'][0]['app_temp']
     return res
 
 
 async def weather3(session):
-    r = await session.get('http://api.weatherstack.com/current?access_key=6fbc9fe04b27f96b5f9dd375dec6b333&query=New%20York')
+    r = await session.get('http://api.weatherstack.com/current?access_key='+WEATHER3+'&query=New%20York')
     res = await r.json()
     res = res['current']['temperature']
     return res
