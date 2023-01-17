@@ -1,2 +1,0 @@
-WEATHER2 = 'f8a1e5d2ca1944eca7e07b1d2713ce87'
-WEATHER3 = '6fbc9fe04b27f96b5f9dd375dec6b333'
